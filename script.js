@@ -108,3 +108,10 @@ function toggleTextContentVisibility() {
 toggleTextBtn.addEventListener('click', function () {
 	toggleTextContentVisibility();
 });
+
+const toggleImageBtn = document.getElementById('toggleImageBtn');
+const imageElement = document.getElementById('image');
+
+toggleImageBtn.addEventListener('click', function () {
+    imageElement.style.display = imageElement.style.display === 'none' ? 'block' : 'none';
+});
