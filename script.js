@@ -105,18 +105,6 @@ function toggleTextContentVisibility() {
 	}
 }
 
-toggleWordsBtn.addEventListener('click', function () {
-	toggleElementVisibility('hocr-word');
-});
-
-toggleLinesBtn.addEventListener('click', function () {
-	toggleElementVisibility('hocr-line');
-});
-
-toggleParagraphsBtn.addEventListener('click', function () {
-	toggleElementVisibility('hocr-paragraph');
-});
-
 toggleTextBtn.addEventListener('click', function () {
 	toggleTextContentVisibility();
 });

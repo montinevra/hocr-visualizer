@@ -8,9 +8,9 @@
 	<h2>HOCR Visualizer</h2>
 	<input type="file" accept=".hocr" id="hocrInput">
 	<button id="openImageBtn">Open Image</button>
-	<button id="toggleWordsBtn">Toggle Words</button>
-	<button id="toggleLinesBtn">Toggle Lines</button>
-	<button id="toggleParagraphsBtn">Toggle Paragraphs</button>
+	<button id="toggleWordsBtn" onclick="toggleElementVisibility('hocr-word')">Toggle Words</button>
+	<button id="toggleLinesBtn" onclick="toggleElementVisibility('hocr-line')">Toggle Lines</button>
+	<button id="toggleParagraphsBtn" onclick="toggleElementVisibility('hocr-paragraph')">Toggle Paragraphs</button>
 	<button id="toggleTextBtn">Toggle Text</button>
 	<div id="hocrImageContainer">
 		<div class="hocr-container" id="hocrContainer"></div>
