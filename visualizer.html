@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOCR Visualizer</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<h2>HOCR Visualizer</h2>
+	<input type="file" accept=".hocr" id="hocrInput">
+	<button id="openImageBtn">Open Image</button>
+	<button id="toggleWordsBtn">Toggle Words</button>
+	<button id="toggleLinesBtn">Toggle Lines</button>
+	<button id="toggleParagraphsBtn">Toggle Paragraphs</button>
+	<button id="toggleTextBtn">Toggle Text</button>
+	<div id="hocrImageContainer">
+		<div class="hocr-container" id="hocrContainer"></div>
+		<img id="image" src="" alt="Loaded Image">
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>

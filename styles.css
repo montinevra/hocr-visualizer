@@ -1,0 +1,36 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 20px;
+}
+
+.hocr-container {
+	position: absolute;
+}
+
+.hocr-word {
+	position: absolute;
+	border: 1px solid red;
+	background-color: rgba(255, 0, 0, 0.3);
+	pointer-events: none;
+	/* Make text transparent */
+	color: transparent;
+}
+
+.hocr-line {
+	position: absolute;
+	border: 1px solid green;
+	background-color: rgba(0, 255, 0, 0.3);
+	pointer-events: none;
+}
+
+.hocr-paragraph {
+	position: absolute;
+	border: 1px solid blue;
+	background-color: rgba(0, 0, 255, 0.3);
+	pointer-events: none;
+}
+
+#image {
+	position: absolute;
+	z-index: -1;
+}
