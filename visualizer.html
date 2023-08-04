@@ -6,8 +6,14 @@
 </head>
 <body>
 	<h2>HOCR Visualizer</h2>
-	<input type="file" accept=".hocr" id="hocrInput">
-	<button id="openImageBtn">Open Image</button>
+	<p>
+		Select .hocr file: <br />
+		<input type="file" accept=".hocr" id="hocrInput">
+	</p>
+	<p>
+		Select image file: <br />
+		<button id="openImageBtn">Open Image</button>
+	</p>
 	<button id="toggleWordsBtn" onclick="toggleElementVisibility('hocr-word')">Toggle Words</button>
 	<button id="toggleLinesBtn" onclick="toggleElementVisibility('hocr-line')">Toggle Lines</button>
 	<button id="toggleParagraphsBtn" onclick="toggleElementVisibility('hocr-paragraph')">Toggle Paragraphs</button>
@@ -15,7 +21,7 @@
 	<button id="toggleImageBtn">Hide/Show Image</button>
 	<div id="hocrImageContainer">
 		<div class="hocr-container" id="hocrContainer"></div>
-		<img id="image" src="" alt="Loaded Image">
+		<img id="image" src="" alt="No image selected">
 	</div>
 	<script src="script.js"></script>
 </body>
