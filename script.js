@@ -5,9 +5,7 @@ function parseHOCR(hocrDocument) {
 
 	function parseElement(element) {
 		const elementData = {
-			type: element.classList.contains('ocrx_word') ? 'word' :
-				  element.classList.contains('ocr_line') ? 'line' :
-				  element.classList.contains('ocr_par') ? 'paragraph' : 'other',
+			type: element.classList[0],
 			boundingBox: element.getAttribute('title') ? element.getAttribute('title').match(/bbox (\d+)\s+(\d+)\s+(\d+)\s+(\d+)/) : null,
 			text: element.classList.contains('ocrx_word') ? element.textContent.trim() : ''
 		};
@@ -38,7 +36,7 @@ function visualizeHOCR(hocrData) {
 		const [x1, y1, x2, y2] = boundingBox.slice(1).map(parseFloat);
 		const hocrElement = document.createElement('div');
 		hocrElement.textContent = text;
-		hocrElement.className = `hocr-${type}`;
+		hocrElement.className = type;
 		hocrElement.style.left = `${x1}px`;
 		hocrElement.style.top = `${y1}px`;
 		hocrElement.style.width = `${x2 - x1}px`;
@@ -99,7 +97,7 @@ function toggleElementVisibility(className) {
 }
 
 function toggleTextContentVisibility() {
-	const wordElements = document.getElementsByClassName('hocr-word');
+	const wordElements = document.getElementsByClassName('ocrx_word');
 	for (const element of wordElements) {
 		element.style.color = element.style.color === 'black' ? '' : 'black';
 	}
@@ -113,5 +111,5 @@ const toggleImageBtn = document.getElementById('toggleImageBtn');
 const imageElement = document.getElementById('image');
 
 toggleImageBtn.addEventListener('click', function () {
-    imageElement.style.display = imageElement.style.display === 'none' ? 'block' : 'none';
+	imageElement.style.display = imageElement.style.display === 'none' ? 'block' : 'none';
 });

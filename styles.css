@@ -7,23 +7,22 @@ body {
 	position: absolute;
 }
 
-.hocr-word {
+.ocrx_word {
 	position: absolute;
 	border: 1px solid red;
 	background-color: rgba(255, 0, 0, 0.3);
 	pointer-events: none;
-	/* Make text transparent */
 	color: transparent;
 }
 
-.hocr-line {
+.ocr_line {
 	position: absolute;
 	border: 1px solid green;
 	background-color: rgba(0, 255, 0, 0.3);
 	pointer-events: none;
 }
 
-.hocr-paragraph {
+.ocr_par {
 	position: absolute;
 	border: 1px solid blue;
 	background-color: rgba(0, 0, 255, 0.3);
