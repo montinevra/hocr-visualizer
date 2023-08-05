@@ -85,10 +85,6 @@ hocrInput.addEventListener('change', handleHOCRFile);
 const openImageBtn = document.getElementById('openImageBtn');
 openImageBtn.addEventListener('click', handleOpenImage);
 
-const toggleWordsBtn = document.getElementById('toggleWordsBtn');
-const toggleLinesBtn = document.getElementById('toggleLinesBtn');
-const toggleParagraphsBtn = document.getElementById('toggleParagraphsBtn');
-
 function toggleElementVisibility(className) {
 	const elements = document.getElementsByClassName(className);
 	for (const element of elements) {
@@ -103,13 +99,8 @@ function toggleTextContentVisibility() {
 	}
 }
 
-toggleTextBtn.addEventListener('click', function () {
-	toggleTextContentVisibility();
-});
-
-const toggleImageBtn = document.getElementById('toggleImageBtn');
 const imageElement = document.getElementById('image');
 
-toggleImageBtn.addEventListener('click', function () {
+function toggleImageVisibility() {
 	imageElement.style.display = imageElement.style.display === 'none' ? 'block' : 'none';
-});
+}

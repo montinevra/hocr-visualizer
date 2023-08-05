@@ -14,11 +14,11 @@
 		Select image file: <br />
 		<button id="openImageBtn">Open Image</button>
 	</p>
-	<button id="toggleTextBtn">Toggle Text</button>
 	<button id="toggleWordsBtn" onclick="toggleElementVisibility('ocrx_word')">Toggle Words</button>
 	<button id="toggleLinesBtn" onclick="toggleElementVisibility('ocr_line')">Toggle Lines</button>
 	<button id="toggleParagraphsBtn" onclick="toggleElementVisibility('ocr_par')">Toggle Paragraphs</button>
-	<button id="toggleImageBtn">Hide/Show Image</button>
+	<button id="toggleTextBtn" onclick="toggleTextContentVisibility()">Toggle Text</button>
+	<button id="toggleImageBtn" onclick="toggleImageVisibility()">Hide/Show Image</button>
 	<div id="hocrImageContainer">
 		<div class="hocr-container" id="hocrContainer"></div>
 		<img id="image" src="" alt="No image selected">
