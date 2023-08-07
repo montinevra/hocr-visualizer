@@ -11,7 +11,6 @@ body {
 	position: absolute;
 	border: 1px solid red;
 	background-color: rgba(255, 0, 0, 0.3);
-	pointer-events: none;
 	color: transparent;
 }
 
@@ -19,14 +18,12 @@ body {
 	position: absolute;
 	border: 1px solid green;
 	background-color: rgba(0, 255, 0, 0.3);
-	pointer-events: none;
 }
 
 .ocr_par {
 	position: absolute;
 	border: 1px solid blue;
 	background-color: rgba(0, 0, 255, 0.3);
-	pointer-events: none;
 }
 
 #image {
