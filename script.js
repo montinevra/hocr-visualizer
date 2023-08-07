@@ -71,6 +71,7 @@ function loadImageWithMatchingBaseFilename(hocrBaseFilename) {
 		if (index >= imageExtensions.length) {
 			// If no matching image found, display default "No image selected" message
 			imageElement.src = '';
+			toggleTextContentVisibility();
 			return;
 		}
 
