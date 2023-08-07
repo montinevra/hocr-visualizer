@@ -53,8 +53,23 @@ function handleHOCRFile(event) {
 		const hocrContent = e.target.result;
 		const hocrData = parseHOCR(hocrContent);
 		visualizeHOCR(hocrData);
+		
+		 // Load the image with the same filename as the .hocr file
+		const filename = file.name;
+		const imageFilename = filename.replace(/\.[^/.]+$/, '.jpg');
+		loadImage(imageFilename);
 	};
 	reader.readAsText(file);
+}
+
+function loadImage(imageFilename) {
+	const image = document.getElementById('image');
+	image.onload = function () {
+		const hocrContainer = document.getElementById('hocrContainer');
+		hocrContainer.style.width = `${image.width}px`;
+		hocrContainer.style.height = `${image.height}px`;
+	};
+	image.src = imageFilename;
 }
 
 function handleOpenImage() {
