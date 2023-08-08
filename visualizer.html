@@ -8,7 +8,8 @@
 	<h2>HOCR Visualizer</h2>
 	<p>
 		Select .hocr file: <br />
-		<input type="file" accept=".hocr" id="hocrInput">
+		<input type="file" accept=".hocr" id="hocrInput"> <br />
+		Also loads an image file with the same name if one exists.
 	</p>
 	<button id="toggleWordsBtn" onclick="toggleElementVisibility('ocrx_word')">Toggle Words</button>
 	<button id="toggleLinesBtn" onclick="toggleElementVisibility('ocr_line')">Toggle Lines</button>
@@ -17,7 +18,7 @@
 	<button id="toggleImageBtn" onclick="toggleImageVisibility()">Hide/Show Image</button>
 	<div id="hocrImageContainer">
 		<div class="hocr-container" id="hocrContainer"></div>
-		<img id="image" src="" alt="No image selected">
+		<img id="image" src="" alt="No image loaded">
 	</div>
 	<script src="script.js"></script>
 </body>
