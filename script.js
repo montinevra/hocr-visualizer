@@ -53,46 +53,8 @@ function handleHOCRFile(event) {
 		const hocrContent = e.target.result;
 		const hocrData = parseHOCR(hocrContent);
 		visualizeHOCR(hocrData);
-
-		// Load any image with the same base filename as the .hocr file
-		const filename = file.name;
-		const hocrBaseFilename = filename.replace(/\.[^/.]+$/, ''); // Remove extension
-		loadImageWithMatchingBaseFilename(hocrBaseFilename);
 	};
 	reader.readAsText(file);
-}
-
-function loadImageWithMatchingBaseFilename(hocrBaseFilename) {
-	const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.tiff', '.svg'];
-	const imageElement = document.getElementById('image');
-	let imageLoaded = false;
-
-	function loadNextImage(index) {
-		if (index >= imageExtensions.length) {
-			// If no matching image found, display default "No image selected" message
-			imageElement.src = '';
-			toggleTextContentVisibility();
-			return;
-		}
-
-		const imageFilename = `${hocrBaseFilename}${imageExtensions[index]}`;
-		const image = new Image();
-		image.onload = function () {
-			const hocrContainer = document.getElementById('hocrContainer');
-			hocrContainer.style.width = `${image.width}px`;
-			hocrContainer.style.height = `${image.height}px`;
-			imageElement.src = image.src;
-			imageLoaded = true;
-		};
-		image.onerror = function () {
-			if (!imageLoaded) {
-				loadNextImage(index + 1);
-			}
-		};
-		image.src = imageFilename;
-	}
-
-	loadNextImage(0);
 }
 
 function handleOpenImage() {
