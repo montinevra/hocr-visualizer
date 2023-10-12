@@ -57,33 +57,27 @@ function handleHOCRFile(event) {
 	reader.readAsText(file);
 }
 
-function handleOpenImage() {
-	const imageInput = document.createElement('input');
-	imageInput.type = 'file';
-	imageInput.accept = 'image/*';
-	imageInput.addEventListener('change', function (event) {
-		const file = event.target.files[0];
-		const reader = new FileReader();
+function handleOpenImage(event) {
+	const file = event.target.files[0];
+	const reader = new FileReader();
 
-		reader.onload = function (e) {
-			const image = document.getElementById('image');
-			image.onload = function () {
-				const hocrContainer = document.getElementById('hocrContainer');
-				hocrContainer.style.width = `${image.width}px`;
-				hocrContainer.style.height = `${image.height}px`;
-			};
-			image.src = e.target.result;
+	reader.onload = function (e) {
+		const image = document.getElementById('image');
+		image.onload = function () {
+			const hocrContainer = document.getElementById('hocrContainer');
+			hocrContainer.style.width = `${image.width}px`;
+			hocrContainer.style.height = `${image.height}px`;
 		};
-		reader.readAsDataURL(file);
-	});
-	imageInput.click();
+		image.src = e.target.result;
+	};
+	reader.readAsDataURL(file);
 }
 
 const hocrInput = document.getElementById('hocrInput');
 hocrInput.addEventListener('change', handleHOCRFile);
 
 const openImageBtn = document.getElementById('openImageBtn');
-openImageBtn.addEventListener('click', handleOpenImage);
+openImageBtn.addEventListener('change', handleOpenImage);
 
 function toggleElementVisibility(className) {
 	const elements = document.getElementsByClassName(className);
