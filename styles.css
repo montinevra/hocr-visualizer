@@ -5,22 +5,28 @@ body {
 
 .hocr-container {
 	position: absolute;
+/*	border: none;*/
 }
 
-.ocrx_word {
+#hocrContainer div {
+	position: absolute;
+	border: 1px solid gray;
+}
+
+#hocrContainer .ocrx_word {
 	position: absolute;
 	border: 1px solid red;
 	background-color: rgba(255, 0, 0, 0.3);
 	color: transparent;
 }
 
-.ocr_line {
+#hocrContainer .ocr_line {
 	position: absolute;
 	border: 1px solid green;
 	background-color: rgba(0, 255, 0, 0.3);
 }
 
-.ocr_par {
+#hocrContainer .ocr_par {
 	position: absolute;
 	border: 1px solid blue;
 	background-color: rgba(0, 0, 255, 0.3);
