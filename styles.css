@@ -8,6 +8,10 @@ body {
 /*	border: none;*/
 }
 
+#hocrImageContainer {
+	margin-top: 1em;
+}
+
 #hocrContainer div {
 	position: absolute;
 	border: 1px solid gray;
@@ -35,4 +39,13 @@ body {
 #image {
 	position: absolute;
 	z-index: -1;
+}
+#coordinates {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.99);
+	padding: 5px;
+	border: 1px solid #000;
 }

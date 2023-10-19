@@ -48,6 +48,7 @@ function visualizeHOCR(hocrData) {
 function handleHOCRFile(event) {
 	const file = event.target.files[0];
 	const reader = new FileReader();
+	console.log(file);
 
 	reader.onload = function (e) {
 		const hocrContent = e.target.result;
@@ -98,3 +99,27 @@ const imageElement = document.getElementById('image');
 function toggleImageVisibility() {
 	imageElement.style.display = imageElement.style.display === 'none' ? 'block' : 'none';
 }
+
+const imageContainer = document.getElementById('hocrImageContainer');
+const coordinatesDisplay = document.getElementById('coordinates');
+
+imageContainer.addEventListener('mouseenter', () => {
+    coordinatesDisplay.style.display = 'block';
+});
+
+imageContainer.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    const containerRect = imageContainer.getBoundingClientRect();
+    const offsetX = x - Math.round(containerRect.left);
+    const offsetY = y - Math.round(containerRect.top);
+
+    coordinatesDisplay.style.left = x + window.pageXOffset + 'px';
+    coordinatesDisplay.style.top = y + window.pageYOffset + 'px';
+    coordinatesDisplay.innerHTML = `X:&nbsp;${offsetX} <br/>Y:&nbsp;${offsetY}`;
+});
+
+imageContainer.addEventListener('mouseleave', () => {
+    coordinatesDisplay.style.display = 'none';
+});
